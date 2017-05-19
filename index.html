@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Sweetcheats</title>
+    <link rel="icon" href="http://www.iconshock.com/img_vista/FLAT/food/jpg/muffin_icon.jpg">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .row.content {
+            height: 1200px
+        }
+
+        .sidenav {
+            background-color: pink;
+            height: 100%;
+        }
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h3>Menu</h3>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kategorie
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bebeczki.html">babeczki</a></li>
+                            <li><a href="bez_pieczenia.html">bez pieczenia</a></li>
+                            <li><a href="brownie.html">brownie</a></li>
+                            <li><a href="przekladane.html">przekładane</a></li>
+                            <li><a href="serniki.html">serniki</a></li>
+                            <li><a href="tarty.html">tarty</a></li>
+                            <li><a href="z_owocami.html">z owocami</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="input.html">Dodaj swój przepis</a></li>
+                </ul>
+
+   <!-- Filtry --> 
+
+                <h3>Filtry</h3>
+                <form role="form" method="post" action="wypisz.php">
+
+                    <hr>
+                    <span style="text-align: left"><h4>Okazja</h4></span>
+                    <hr>
+                    <div class="checkbox-group" style="margin-left: 35px">
+                        <input type="hidden" name="boze_narodzenie" value="0">
+                        <label class="checkbox"><input type="checkbox" name="boze_narodzenie" value="1">Boże Narodzenie</label>
+                        <input type="hidden" name="chrzciny" value="0">
+                        <label class="checkbox"><input type="checkbox" name="chrzciny" value="1">Chrzciny</label>
+                        <input type="hidden" name="urodziny" value="0">
+                        <label class="checkbox"><input type="checkbox" name="urodziny" value="1">Urodziny</label>
+                        <input type="hidden" name="walentynki" value="0">
+                        <label class="checkbox"><input type="checkbox" name="walentynki" value="1">Walentynki</label>
+                        <input type="hidden" name="wielkanoc" value="0">
+                        <label class="checkbox"><input type="checkbox" name="wielkanoc" value="1">Wielkanoc</label>
+
+
+                    </div>
+                </form>
+                <hr>
+
+                <form role="form" method="post" action="wypisz.php">
+
+
+                    <span style="text-align: left"><h4>Specyfikacje</h4></span>
+                    <hr>
+                    <div class="checkbox-group" style="margin-left: 35px">
+                        <input type="hidden" name="bez_cukru" value="0">
+                        <label class="checkbox"><input type="checkbox" name="bez_cukru" value="1">Bez cukru</label>
+
+                        <input type="hidden" name="bez_glutenu" value="0">
+                        <label class="checkbox"><input type="checkbox" name="bez_glutenu" value="1">Bez glutenu</label>
+
+                        <input type="hidden" name="bez_jaj" value="0">
+                        <label class="checkbox"><input type="checkbox" name="bez_jaj" value="1">Bez jaj</label>
+
+                        <input type="hidden" name="bez_laktozy" value="0">
+                        <label class="checkbox"><input type="checkbox" name="bez_laktozy" value="1">Bez laktozy</label>
+
+                        <input type="hidden" name="weganskie" value="0">
+                        <label class="checkbox"><input type="checkbox" name="weganskie" value="1">Wegańskie</label>
+
+
+
+                    </div>
+                </form>
+                <hr>
+
+                <form role="form" method="post" action="wypisz.php">
+                    <span style="text-align: left"><h4>Trudność</h4></span>
+                    <hr>
+                    <div class="checkbox-group" style="margin-left: 35px">
+                        <label class="checkbox" for="blatwe"><input type="checkbox" name="blatwe" id="blatwe" value="1">bardzo łatwe</label>
+                        <label class="checkbox" for="latwe"><input type="checkbox" name="latwe" id="latwe" value="2">łatwe</label>
+                        <label class="checkbox" for="srednie"><input type="checkbox" name="srednie" id="srednie" value="3">średnie</label>
+                        <label class="checkbox" for="trudne"><input type="checkbox" name="trudne" id="trudne" value="4">trudne</label>
+                        <label class="checkbox" for="btrudne"><input type="checkbox" name="btrudne" id="btrudne" value="5">bardzo trudne</label>
+                    </div>
+                    <div style="text-align: right">
+                        <input type="reset" value="wyczyść" class="btn btn-danger">
+                        <input type="submit" value="Zastosuj" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Koniec filtrów -->
+
+            <div class="col-sm-9">
+
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Stopcia</p>
+    </footer>
+
+</body>
+
+</html>

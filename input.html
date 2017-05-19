@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Sweetcheats</title>
+    <link rel="icon" href="http://www.iconshock.com/img_vista/FLAT/food/jpg/muffin_icon.jpg">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("input").checkboxradio({
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.nav-show').hide();
+
+        $("li:has(ul)").click(function () {
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open').find('ul').slideUp();
+            }
+            else {
+                $(this).addClass('open').find('ul').slideDown();
+            }
+        });
+    </script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+        .row.content {
+            height: 1200px
+        }
+        /* Set gray background color and 100% height */
+
+        .sidenav {
+            background-color: #a1a1a1;
+            height: 100%;
+        }
+        /* Set black background color, white text and some padding */
+
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+        /* On small screens, set height to 'auto' for sidenav and grid */
+
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <h3>Menu</h3>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kategorie
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bebeczki.html">babeczki</a></li>
+                            <li><a href="bez_pieczenia.html">bez pieczenia</a></li>
+                            <li><a href="brownie.html">brownie</a></li>
+                            <li><a href="przekladane.html">przekładane</a></li>
+                            <li><a href="serniki.html">serniki</a></li>
+                            <li><a href="tarty.html">tarty</a></li>
+                            <li><a href="z_owocami.html">z owocami</a></li>
+                        </ul>
+                        </li>
+                        <li class="active"><a href="input.html">Dodaj swój przepis</a></li>
+                        </ul>
+                    </div>
+
+
+            <div class="col-sm-9" style="padding: 60px">
+                <form method="post" action="input.php" class="form-horizontal" name="input">
+                    <div class="form-group">
+                        <label for="nazwa">Nazwa</label>
+                        <input type="text" name="nazwa" class="form-control" id="nazwa" placeholder="Nazwij swój przepis" pattern="^[a-zA-Z0-9 ]+$"
+                            title="A-Z a-z 0-9" required>
+                        <br><label for="link">Link</label>
+                        <input type="text" name="link" class="form-control" id="link" placeholder="Podaj link do przepisu" required>
+
+                        <br> <label for="godziny">Czas przygotowania</label>
+                        <div class="form-inline">
+                            <input type="number" name="dni" class="form-control" id="dni" style="width: 20%" placeholder="Podaj liczbę dni" pattern="^[0-9]+$"
+                                title="0-9" required>
+                            <input type="number" name="godziny" class="form-control" id="godziny" style="width: 20%" placeholder="Podaj liczbę godzin"
+                                pattern="^[0-9]+$" title="0-9" required>
+                            <input type="number" name="minuty" class="form-control" id="minuty" style="width: 20%" placeholder="Podaj liczbę minut" pattern="^[0-9]+$"
+                                title="0-9" required>
+                            <input type="reset" value="wyczyść" class="btn btn-danger">
+                            <input type="submit" value="Wyślij" class="btn btn-success">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <span style="text-align: left"><h4>Kategoria</h4></span>
+                        <div class="checkbox-group" style="margin-left: 35px">
+                            <input type="hidden" name="babeczki" value="0">
+                            <label class="checkbox"><input type="checkbox" name="babeczki" value="1" id="kategoria">Babeczki</label>
+
+                            <input type="hidden" name="bez_pieczenia" value="0">
+                            <label class="checkbox"><input type="checkbox" name="bez_pieczenia" value="1" id="kategoria">Bez pieczenia</label>
+
+                            <input type="hidden" name="brownie" value="0">
+                            <label class="checkbox"><input type="checkbox" name="brownie" value="1" id="kategoria">Brownie</label>
+
+                            <input type="hidden" name="przekladane" value="0">
+                            <label class="checkbox"><input type="checkbox" name="przekladane" value="1" id="kategoria">Przekładane</label>
+
+                            <input type="hidden" name="tarty" value="0">
+                            <label class="checkbox"><input type="checkbox" name="tarty" value="1" id="kategoria">Tarty</label>
+
+                            <input type="hidden" name="serniki" value="0">
+                            <label class="checkbox"><input type="checkbox" name="serniki" value="1" id="kategoria">Serniki</label>
+
+                            <input type="hidden" name="z_owocami" value="0">
+                            <label class="checkbox"><input type="checkbox" name="z_owocami" value="1" id="kategoria">Z owocami</label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <span style="text-align: left"><h4>Okazja</h4></span>
+                        <div class="checkbox-group" style="margin-left: 35px">
+                            <input type="hidden" name="boze_narodzenie" value="0">
+                            <label class="checkbox"><input type="checkbox" name="boze_narodzenie" value="1">Boże Narodzenie</label>
+                            <input type="hidden" name="chrzciny" value="0">
+                            <label class="checkbox"><input type="checkbox" name="chrzciny" value="1">Chrzciny</label>
+                            <input type="hidden" name="urodziny" value="0">
+                            <label class="checkbox"><input type="checkbox" name="urodziny" value="1">Urodziny</label>
+                            <input type="hidden" name="walentynki" value="0">
+                            <label class="checkbox"><input type="checkbox" name="walentynki" value="1">Walentynki</label>
+                            <input type="hidden" name="wielkanoc" value="0">
+                            <label class="checkbox"><input type="checkbox" name="wielkanoc" value="1">Wielkanoc</label>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <span style="text-align: left"><h4>Specyfikacje</h4></span>
+                        <div class="checkbox-group" style="margin-left: 35px">
+                            <input type="hidden" name="bez_cukru" value="0">
+                            <label class="checkbox"><input type="checkbox" name="bez_cukru" value="1">Bez cukru</label>
+
+                            <input type="hidden" name="bez_glutenu" value="0">
+                            <label class="checkbox"><input type="checkbox" name="bez_glutenu" value="1">Bez glutenu</label>
+
+                            <input type="hidden" name="bez_jaj" value="0">
+                            <label class="checkbox"><input type="checkbox" name="bez_jaj" value="1">Bez jaj</label>
+
+                            <input type="hidden" name="bez_laktozy" value="0">
+                            <label class="checkbox"><input type="checkbox" name="bez_laktozy" value="1">Bez laktozy</label>
+
+                            <input type="hidden" name="weganskie" value="0">
+                            <label class="checkbox"><input type="checkbox" name="weganskie" value="1">Wegańskie</label>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <span style="text-align: left"><h4>Trudność</h4></span>
+                        <div class="radio-group" style="margin-left: 35px">
+                            <label class="radio" for="blatwe"><input type="radio" name="trudnosc" id="blatwe" value="1" required>bardzo łatwe</label>
+                            <label class="radio" for="latwe"><input type="radio" name="trudnosc" id="latwe" value="2">łatwe</label>
+                            <label class="radio" for="srednie"><input type="radio" name="trudnosc" id="srednie" value="3">średnie</label>
+                            <label class="radio" for="trudne"><input type="radio" name="trudnosc" id="trudne" value="4">trudne</label>
+                            <label class="radio" for="btrudne"><input type="radio" name="trudnosc" id="btrudne" value="5">bardzo trudne</label>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Stopcia</p>
+    </footer>
+
+</body>
+
+</html>
